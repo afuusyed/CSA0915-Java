@@ -1,0 +1,23 @@
+public class LcmGcdExample {
+    public static void main(String[] args) {
+        for (int n1 = 1; n1 <= 10; n1++) {
+            for (int n2 = n1 + 1; n2 <= 10; n2++) {
+                int x = n1;
+                int y = n2;
+                int n1Copy = n1;
+                int n2Copy = n2;
+               while (n2 != 0) {
+                    int t = n2;
+                    n2 = n1 % n2;
+                    n1 = t;
+                  }
+                 int gcd = n1;
+                System.out.println("GCD of " + x + " and " + y + " = " + gcd);
+                int lcm = (x * y) / gcd;
+                System.out.println("LCM of " + x + " and " + y + " = " + lcm);
+                n1 = n1Copy;
+                n2 = n2Copy;
+            }
+        }
+    }
+}
